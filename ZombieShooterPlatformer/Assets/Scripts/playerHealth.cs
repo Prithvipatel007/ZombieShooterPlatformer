@@ -33,7 +33,8 @@ public class playerHealth : MonoBehaviour
 
     public void makeDead()
     {
+        gameObject.SetActive(false);
         Instantiate(playerDeathFX, transform.position, Quaternion.Euler(new Vector3(-90, 0, 0)));
-        Destroy(gameObject);
+        Destroy(gameObject, 0.3f);
     }
 }
