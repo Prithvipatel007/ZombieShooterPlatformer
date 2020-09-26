@@ -64,7 +64,10 @@ public class PlayerController : MonoBehaviour
         float sneaking = Input.GetAxisRaw("Fire3");     // Fire3 is associated by default with the Shift button
         myAnim.SetFloat("sneaking", sneaking);
 
-        if(sneaking > 0.1 && grounded)
+        float firing = Input.GetAxisRaw("Fire1");
+        myAnim.SetFloat("shooting", firing);
+
+        if ((sneaking > 0.1 || firing > 0) && grounded)
         {
             myRB.velocity = new Vector3(move * walkSpeed, myRB.velocity.y, 0);
         }
@@ -91,6 +94,12 @@ public class PlayerController : MonoBehaviour
         Vector3 theScale = transform.localScale;
         theScale.z *= -1;
         transform.localScale = theScale;
+    }
+
+    public float GetFacing()
+    {
+        if (facingRight) return 1f;
+        else return -1f;
     }
 
 }
