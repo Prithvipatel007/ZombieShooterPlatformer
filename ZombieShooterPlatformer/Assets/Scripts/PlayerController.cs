@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     Rigidbody myRB;
     Animator myAnim;
     bool facingRight;
+    bool running;
 
     /// <summary>
     /// variables for jumping
@@ -34,6 +35,8 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        running = false;
+
         // code for jump
         if(grounded && Input.GetAxis("Jump") > 0)
         {
@@ -69,11 +72,16 @@ public class PlayerController : MonoBehaviour
 
         if ((sneaking > 0.1 || firing > 0) && grounded)
         {
+            // walking
             myRB.velocity = new Vector3(move * walkSpeed, myRB.velocity.y, 0);
         }
         else
         {
+            // running
             myRB.velocity = new Vector3(move * runSpeed, myRB.velocity.y, 0);
+            
+            if(Mathf.Abs(move) > 0)
+                running = true;
         }
         
 
@@ -100,6 +108,11 @@ public class PlayerController : MonoBehaviour
     {
         if (facingRight) return 1f;
         else return -1f;
+    }
+
+    public bool GetRunning()
+    {
+        return running;
     }
 
 }

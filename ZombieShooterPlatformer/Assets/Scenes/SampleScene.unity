@@ -239,6 +239,7 @@ GameObject:
   m_Component:
   - component: {fileID: 274674796}
   - component: {fileID: 274674797}
+  - component: {fileID: 274674798}
   m_Layer: 0
   m_Name: gunMuzzle
   m_TagString: Untagged
@@ -274,6 +275,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeBetweenBullets: 0.15
   projectile: {fileID: 5012836629842765752, guid: cb90b0786bec6d34896e384efd8f2a2f, type: 3}
+--- !u!114 &274674798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 274674795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8b0fb752931e3e4f9ce8cfd7af0ac23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
+  knockBack: 10
+  knockBackRadius: 0.5
+  meleeRate: 0.5
 --- !u!4 &342513139 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -140191608578672617, guid: 405c96667eb81b74fb91ba918f7a23c5, type: 3}
@@ -1259,6 +1276,10 @@ PrefabInstance:
     - target: {fileID: 6904958156248092632, guid: bca353c9b614da64fb7a7eeefb267672, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6904958156248092634, guid: bca353c9b614da64fb7a7eeefb267672, type: 3}
+      propertyPath: damage
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6904958156248092639, guid: bca353c9b614da64fb7a7eeefb267672, type: 3}
       propertyPath: m_Name
