@@ -4933,7 +4933,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 250df993b559cd240bec7e185294a4c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 50
+  damage: 2
   damageRate: 0.25
   pushBackForce: 0
 --- !u!1001 &8179372202618363003
