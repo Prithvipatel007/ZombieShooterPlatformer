@@ -49,6 +49,12 @@ public class FireBullet : MonoBehaviour
             playerAmmoSlider.value = remainingRounds;
 
         }
-
     }
+
+    public void Reload()
+    {
+        remainingRounds = maxRounds;
+        playerAmmoSlider.value = remainingRounds;
+    }
+
 }

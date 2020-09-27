@@ -52,6 +52,17 @@ public class playerHealth : MonoBehaviour
         }
     }
 
+    public void addHealth(float healthAmount)
+    {
+        currentHealth += healthAmount;
+
+        if (currentHealth >= fullHealth)
+            currentHealth = fullHealth;
+
+        playerHealthSlider.value = currentHealth;
+    }
+
+
     public void makeDead()
     {
         gameObject.SetActive(false);
