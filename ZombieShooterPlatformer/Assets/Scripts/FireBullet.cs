@@ -1,11 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FireBullet : MonoBehaviour
 {
     public float timeBetweenBullets = 0.15f;
     public GameObject projectile;       // the bullet prefab
+
+    // bullet info
+    public int maxRounds = 100;
+    public int startingRounds = 100;
+    int remainingRounds;
+    public Slider playerAmmoSlider;
 
     float nextBullet;
 
@@ -13,6 +20,9 @@ public class FireBullet : MonoBehaviour
     void Awake()
     {
         nextBullet = 0f;
+        remainingRounds = startingRounds;
+        playerAmmoSlider.maxValue = maxRounds;
+        playerAmmoSlider.value = remainingRounds;
     }
 
     // Update is called once per frame
@@ -20,7 +30,7 @@ public class FireBullet : MonoBehaviour
     {
         PlayerController myPlayer = transform.root.GetComponent<PlayerController>();
 
-        if (Input.GetAxisRaw("Fire1") > 0 && nextBullet  < Time.time)
+        if (Input.GetAxisRaw("Fire1") > 0 && nextBullet  < Time.time && remainingRounds > 0)
         {
             nextBullet = Time.time + timeBetweenBullets;
             Vector3 rot;
@@ -35,6 +45,8 @@ public class FireBullet : MonoBehaviour
             }
 
             Instantiate(projectile, transform.position, Quaternion.Euler(rot));
+            remainingRounds--;
+            playerAmmoSlider.value = remainingRounds;
 
         }
 
