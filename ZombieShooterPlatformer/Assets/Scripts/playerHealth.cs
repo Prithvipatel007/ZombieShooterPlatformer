@@ -10,6 +10,8 @@ public class playerHealth : MonoBehaviour
 
     public GameObject playerDeathFX;
 
+    AudioSource playerAS;
+
     // HUD
     public Slider playerHealthSlider;
     public Image damageScreen;
@@ -23,6 +25,7 @@ public class playerHealth : MonoBehaviour
         currentHealth = fullHealth;
         playerHealthSlider.maxValue = fullHealth;
         playerHealthSlider.value = currentHealth;
+        playerAS = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -45,6 +48,7 @@ public class playerHealth : MonoBehaviour
         currentHealth -= damage;
         playerHealthSlider.value = currentHealth;
         damaged = true;
+        playerAS.Play();
 
         if(currentHealth <= 0)
         {

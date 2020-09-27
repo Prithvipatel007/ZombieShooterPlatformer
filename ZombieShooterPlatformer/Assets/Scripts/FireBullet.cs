@@ -14,6 +14,12 @@ public class FireBullet : MonoBehaviour
     int remainingRounds;
     public Slider playerAmmoSlider;
 
+    // audio info
+    AudioSource gunMuzzleAS;
+    public AudioClip shootSound;
+    public AudioClip reloadSound;
+
+
     float nextBullet;
 
     // Start is called before the first frame update
@@ -21,6 +27,7 @@ public class FireBullet : MonoBehaviour
     {
         nextBullet = 0f;
         remainingRounds = startingRounds;
+        gunMuzzleAS = GetComponent<AudioSource>();
         playerAmmoSlider.maxValue = maxRounds;
         playerAmmoSlider.value = remainingRounds;
     }
@@ -44,6 +51,8 @@ public class FireBullet : MonoBehaviour
                 rot = new Vector3(0, 90, 0);
             }
 
+            PlayASound(shootSound);
+
             Instantiate(projectile, transform.position, Quaternion.Euler(rot));
             remainingRounds--;
             playerAmmoSlider.value = remainingRounds;
@@ -55,6 +64,14 @@ public class FireBullet : MonoBehaviour
     {
         remainingRounds = maxRounds;
         playerAmmoSlider.value = remainingRounds;
+        PlayASound(reloadSound);
     }
+
+    void PlayASound(AudioClip playSound)
+    {
+        gunMuzzleAS.clip = playSound;
+        gunMuzzleAS.Play();
+    }
+
 
 }
