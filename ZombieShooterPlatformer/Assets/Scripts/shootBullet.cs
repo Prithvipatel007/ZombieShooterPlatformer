@@ -29,6 +29,15 @@ public class shootBullet : MonoBehaviour
         if (Physics.Raycast(shootRay, out shootHit, range, shootableMask))
         {
             // hit an enemy goes here
+            if(shootHit.collider.tag == "Enemy")
+            {
+                enemyHealth theEnemyHealth = shootHit.collider.GetComponent<enemyHealth>();
+                if(theEnemyHealth != null)
+                {
+                    theEnemyHealth.addDamage(damage);
+                    theEnemyHealth.damageFX(shootHit.point, -shootRay.direction);
+                }
+            }
 
             // draws line from the gun position to whatever it hits
             gunLine.SetPosition(1, shootHit.point);
