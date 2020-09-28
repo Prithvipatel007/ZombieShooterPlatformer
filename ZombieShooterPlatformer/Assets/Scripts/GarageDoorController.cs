@@ -46,7 +46,7 @@ public class GarageDoorController : MonoBehaviour
             doorAnim.SetTrigger("doorTrigger");
             open = !open;
             gearAnim.SetTrigger("gearTrigger");
-            doorAudio.Play();
+            doorAudio.Play(); 
         }
     }
 
