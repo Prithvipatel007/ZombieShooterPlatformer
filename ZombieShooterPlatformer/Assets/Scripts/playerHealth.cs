@@ -20,7 +20,7 @@ public class playerHealth : MonoBehaviour
     bool damaged = false;       // indicate if the player is damaged or not.
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         currentHealth = fullHealth;
         playerHealthSlider.maxValue = fullHealth;
