@@ -5,6 +5,7 @@ using UnityEngine;
 public class zombieController : MonoBehaviour
 {
     public GameObject flipModel;    // flip a part or body of zombie, not the whole zombie with slider and all
+    public GameObject ragDollDead;
 
     // audio options
     public AudioClip[] idleSounds;
@@ -136,6 +137,60 @@ public class zombieController : MonoBehaviour
                 running = false;
             }
         }
+    }
+
+    public void RagdollDeath()
+    {
+        GameObject ragDoll = Instantiate(ragDollDead, transform.root.position, Quaternion.identity) as GameObject;
+
+        Transform ragDollMaster = ragDoll.transform.Find("master");
+        Transform zombieMaster = transform.root.Find("master");
+
+        // to get the bone orientation like we want
+
+        bool wasFacingRight = true;
+        if (!facingRight)
+        {
+            wasFacingRight = false;
+            Flip();
+        }
+
+        // gives all the transforms of all the joints in the ragdoll
+        Transform[] ragdollJoints = ragDollMaster.GetComponentsInChildren<Transform>();
+        Transform[] currentJoints = zombieMaster.GetComponentsInChildren<Transform>();
+
+        for (int i = 0; i < ragdollJoints.Length; i++)
+        {
+            for(int q = 0; q < currentJoints.Length; q++)
+            {
+                if(currentJoints[q].name.CompareTo(ragdollJoints[i].name) == 0)
+                {
+                    ragdollJoints[i].position = currentJoints[q].position;
+                    ragdollJoints[i].rotation = currentJoints[q].rotation;
+                    break;
+                }
+            }
+        }
+
+        if (wasFacingRight)
+        {
+            Vector3 rotVector = new Vector3(0, 0, 0);
+            ragDoll.transform.rotation = Quaternion.Euler(rotVector);
+        }
+        else
+        {
+            Vector3 rotVector = new Vector3(0, 90, 0);
+            ragDoll.transform.rotation = Quaternion.Euler(rotVector);
+        }
+
+        Transform zombieMesh = transform.root.transform.Find("zombieSoldier");
+        Transform ragDollMesh = ragDoll.transform.Find("zombieSoldier");
+
+        ragDollMesh.GetComponent<Renderer>().material = zombieMesh.GetComponent<Renderer>().material;
+
+
+
+
     }
 
 }

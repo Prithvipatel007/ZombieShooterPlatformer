@@ -76,6 +76,14 @@ public class enemyHealth : MonoBehaviour
 
     public void makeDead()
     {
+
+        zombieController aZombie = GetComponentInChildren<zombieController>();
+
+        if(aZombie != null)
+        {
+            aZombie.RagdollDeath();
+        }
+
         // turn off movement
         // create ragdoll
 
