@@ -1785,6 +1785,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flipModel: {fileID: 8039538732699757003}
+  ragDollDead: {fileID: 0}
   idleSounds:
   - {fileID: 8300000, guid: e1e8417a6233f83468cabc847892c3e2, type: 3}
   - {fileID: 8300000, guid: 12e64b221825a0e4da0ced44713e836d, type: 3}
@@ -2081,7 +2082,7 @@ MonoBehaviour:
   canBurn: 1
   burnDamage: 4
   burnTime: 4
-  burnEffects: {fileID: 6904958156248092639, guid: bca353c9b614da64fb7a7eeefb267672, type: 3}
+  burnEffects: {fileID: 3341971656588785440}
   enemyHealthIndicator: {fileID: 8192689116943443752}
 --- !u!1 &9051630841924926088
 GameObject:
@@ -2237,7 +2238,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6904958156248092632, guid: bca353c9b614da64fb7a7eeefb267672, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.21
+      value: 0.168
       objectReference: {fileID: 0}
     - target: {fileID: 6904958156248092632, guid: bca353c9b614da64fb7a7eeefb267672, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2245,7 +2246,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6904958156248092632, guid: bca353c9b614da64fb7a7eeefb267672, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0
+      value: -0.1
       objectReference: {fileID: 0}
     - target: {fileID: 6904958156248092632, guid: bca353c9b614da64fb7a7eeefb267672, type: 3}
       propertyPath: m_LocalRotation.x
@@ -2279,6 +2280,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6904958156248092632, guid: bca353c9b614da64fb7a7eeefb267672, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6904958156248092632, guid: bca353c9b614da64fb7a7eeefb267672, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6904958156248092632, guid: bca353c9b614da64fb7a7eeefb267672, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6904958156248092639, guid: bca353c9b614da64fb7a7eeefb267672, type: 3}
       propertyPath: m_Name
       value: fire
@@ -2289,6 +2302,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bca353c9b614da64fb7a7eeefb267672, type: 3}
+--- !u!1 &3341971656588785440 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6904958156248092639, guid: bca353c9b614da64fb7a7eeefb267672, type: 3}
+  m_PrefabInstance: {fileID: 8192689115632728319}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3341971656588785447 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6904958156248092632, guid: bca353c9b614da64fb7a7eeefb267672, type: 3}
