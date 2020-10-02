@@ -19,6 +19,10 @@ public class FireBullet : MonoBehaviour
     public AudioClip shootSound;
     public AudioClip reloadSound;
 
+    //graphic info
+    public Sprite weaponSprite;     // sprite to show the weapon in gui
+    public Image weaponImage;       // image location on the GUI 
+
 
     float nextBullet;
 
@@ -71,6 +75,17 @@ public class FireBullet : MonoBehaviour
     {
         gunMuzzleAS.clip = playSound;
         gunMuzzleAS.Play();
+    }
+
+    public void InitializeWeapon()
+    {
+        gunMuzzleAS.clip = reloadSound;
+        gunMuzzleAS.Play();
+        nextBullet = 0f;
+        playerAmmoSlider.maxValue = maxRounds;
+        playerAmmoSlider.value = remainingRounds;
+        playerAmmoSlider.value = remainingRounds;
+        weaponImage.sprite = weaponSprite;
     }
 
 
