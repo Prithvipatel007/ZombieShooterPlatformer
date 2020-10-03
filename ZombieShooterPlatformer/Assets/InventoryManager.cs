@@ -20,11 +20,11 @@ public class InventoryManager : MonoBehaviour
             weaponsAvailable[i] = false;
         }
         currentWeapon = 0;
-        //weaponsAvailable[currentWeapon] = true;
-        for (int i = 0; i < Weapons.Length; i++)
+        weaponsAvailable[currentWeapon] = true;
+        /*for (int i = 0; i < Weapons.Length; i++)
         {
             weaponsAvailable[i] = true;
-        }
+        }*/
 
         deactivateWeapons();
 
@@ -36,7 +36,7 @@ public class InventoryManager : MonoBehaviour
     void Update()
     {
         // toggle weapons
-        if (Input.GetButtonDown("Submit"))
+        if (Input.GetKeyDown(KeyCode.Return))
         {
             int i;
             for(i=currentWeapon + 1; i < Weapons.Length; i++)
