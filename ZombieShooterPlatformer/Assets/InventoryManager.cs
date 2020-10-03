@@ -11,6 +11,8 @@ public class InventoryManager : MonoBehaviour
 
     int currentWeapon;
 
+    Animator weaponImageAnim;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +27,8 @@ public class InventoryManager : MonoBehaviour
         {
             weaponsAvailable[i] = true;
         }*/
+
+        weaponImageAnim = weaponImage.GetComponent<Animator>();
 
         deactivateWeapons();
 
@@ -67,6 +71,7 @@ public class InventoryManager : MonoBehaviour
         deactivateWeapons();
         Weapons[whichWeapon].SetActive(true);
         Weapons[whichWeapon].GetComponentInChildren<FireBullet>().InitializeWeapon();
+        weaponImageAnim.SetTrigger("WeaponSwitch");
     }
 
 

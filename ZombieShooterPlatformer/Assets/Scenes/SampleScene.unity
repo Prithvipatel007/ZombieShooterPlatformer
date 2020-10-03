@@ -1991,6 +1991,7 @@ GameObject:
   - component: {fileID: 1396535290}
   - component: {fileID: 1396535292}
   - component: {fileID: 1396535291}
+  - component: {fileID: 1396535293}
   m_Layer: 5
   m_Name: playerWeaponImage
   m_TagString: Untagged
@@ -2055,6 +2056,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1396535289}
   m_CullTransparentMesh: 0
+--- !u!95 &1396535293
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1396535289}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 97df0fd753dde7e4fb576ff495138c8e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &1420204337 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2183451960735364676, guid: fb9db6d79eec26a4a90f0bb81efb0be7, type: 3}
@@ -3041,6 +3061,7 @@ MonoBehaviour:
   - {fileID: 6659124010300683551}
   - {fileID: 2434310517773093017}
   weaponImage: {fileID: 1396535291}
+  weaponImageAnim: {fileID: 1396535293}
 --- !u!1 &6659124010300683551 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5812071039087013387, guid: 1bf59d44ed7e49a49b2fb1f9668742c6, type: 3}
