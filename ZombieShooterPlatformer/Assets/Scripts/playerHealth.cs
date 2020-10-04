@@ -11,6 +11,9 @@ public class playerHealth : MonoBehaviour
     public GameObject playerDeathFX;
 
     AudioSource playerAS;
+    public restartGame gameController;
+
+    public Text endGameText;
 
     // HUD
     public Slider playerHealthSlider;
@@ -69,9 +72,15 @@ public class playerHealth : MonoBehaviour
 
     public void makeDead()
     {
+        
         gameObject.SetActive(false);
         Instantiate(playerDeathFX, transform.position, Quaternion.Euler(new Vector3(-90, 0, 0)));
         damageScreen.color = flashColor;
-        Destroy(gameObject, 0.3f);
+        Animator endGameAnim = endGameText.GetComponent<Animator>();
+        endGameAnim.SetTrigger("endGame");
+
+        Destroy(gameObject, 5f);
+
+        gameController.restartTheGame();
     }
 }

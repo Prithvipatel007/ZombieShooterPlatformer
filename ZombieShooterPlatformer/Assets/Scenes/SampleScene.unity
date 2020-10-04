@@ -349,6 +349,105 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &270420883
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 270420884}
+  - component: {fileID: 270420886}
+  - component: {fileID: 270420885}
+  - component: {fileID: 270420887}
+  m_Layer: 5
+  m_Name: endGameText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &270420884
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 270420883}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1643269212}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &270420885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 270420883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.6792453, g: 0.05446779, b: 0.05446779, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: be92e0a9001bbb9439970413a659643b, type: 3}
+    m_FontSize: 150
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 200
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 0
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: You died!
+--- !u!222 &270420886
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 270420883}
+  m_CullTransparentMesh: 0
+--- !u!95 &270420887
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 270420883}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 90eac33c4f680da438a41109cef24385, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &309286332
 GameObject:
   m_ObjectHideFlags: 0
@@ -1497,6 +1596,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1091650033}
   - component: {fileID: 1091650034}
+  - component: {fileID: 1091650035}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -1616,6 +1716,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1091650035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1091650032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6a02d0ed58f0084aadf69cff817da2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  restartTime: 3
 --- !u!1 &1136716517
 GameObject:
   m_ObjectHideFlags: 0
@@ -2235,6 +2348,7 @@ RectTransform:
   m_Children:
   - {fileID: 844672131}
   - {fileID: 1965659049}
+  - {fileID: 270420884}
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3021,6 +3135,14 @@ PrefabInstance:
       propertyPath: damageScreen
       value: 
       objectReference: {fileID: 844672132}
+    - target: {fileID: 6659124009806916878, guid: 1bf59d44ed7e49a49b2fb1f9668742c6, type: 3}
+      propertyPath: endGameText
+      value: 
+      objectReference: {fileID: 270420885}
+    - target: {fileID: 6659124009806916878, guid: 1bf59d44ed7e49a49b2fb1f9668742c6, type: 3}
+      propertyPath: gameController
+      value: 
+      objectReference: {fileID: 1091650035}
     - target: {fileID: 6659124010034397558, guid: 1bf59d44ed7e49a49b2fb1f9668742c6, type: 3}
       propertyPath: playerAmmoSlider
       value: 
@@ -3061,7 +3183,6 @@ MonoBehaviour:
   - {fileID: 6659124010300683551}
   - {fileID: 2434310517773093017}
   weaponImage: {fileID: 1396535291}
-  weaponImageAnim: {fileID: 1396535293}
 --- !u!1 &6659124010300683551 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5812071039087013387, guid: 1bf59d44ed7e49a49b2fb1f9668742c6, type: 3}
