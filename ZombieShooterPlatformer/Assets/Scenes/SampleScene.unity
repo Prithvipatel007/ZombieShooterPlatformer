@@ -3127,6 +3127,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6659124009806916872, guid: 1bf59d44ed7e49a49b2fb1f9668742c6, type: 3}
+      propertyPath: jumpHeight
+      value: 700
+      objectReference: {fileID: 0}
     - target: {fileID: 6659124009806916878, guid: 1bf59d44ed7e49a49b2fb1f9668742c6, type: 3}
       propertyPath: playerHealthSlider
       value: 
